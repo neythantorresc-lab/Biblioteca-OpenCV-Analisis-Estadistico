@@ -1,0 +1,120 @@
+\documentclass[12pt]{article}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{geometry}
+
+\geometry{margin=2.5cm}
+
+\title{Análisis Estadístico en Tiempo Real usando OpenCV}
+\author{Tu Nombre}
+\date{\today}
+
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    commentstyle=\color{green},
+    numbers=left,
+    numberstyle=\tiny,
+    breaklines=true
+}
+
+\begin{document}
+
+\maketitle
+
+\section{Introducción}
+
+La visión por computadora es una rama de la inteligencia artificial que permite a las máquinas interpretar información visual del entorno. Una de las bibliotecas más utilizadas en este campo es OpenCV (Open Source Computer Vision Library), la cual permite el procesamiento de imágenes y video en tiempo real.
+
+En este documento se presenta una aplicación desarrollada en Python que realiza un análisis estadístico de las intensidades de una imagen capturada desde la cámara en tiempo real.
+
+\section{Instalación}
+
+Para utilizar OpenCV en Python es necesario instalar la biblioteca mediante el siguiente comando:
+
+\begin{verbatim}
+pip install opencv-python numpy matplotlib
+\end{verbatim}
+
+Las bibliotecas utilizadas son:
+
+\begin{itemize}
+\item OpenCV: captura y procesamiento de imagen.
+\item NumPy: cálculos estadísticos.
+\item Matplotlib: visualización del histograma.
+\end{itemize}
+
+\section{Fundamento Teórico}
+
+En una imagen en escala de grises, cada píxel puede tomar valores entre 0 y 255. Esta intensidad puede modelarse como una variable aleatoria discreta:
+
+\[
+X \in \{0,1,2,...,255\}
+\]
+
+\subsection{Esperanza Matemática}
+
+La media se define como:
+
+\[
+E(X) = \sum_{i=0}^{255} x_i P(x_i)
+\]
+
+\subsection{Varianza}
+
+La varianza mide la dispersión:
+
+\[
+Var(X) = E(X^2) - [E(X)]^2
+\]
+
+\subsection{Desviación Estándar}
+
+\[
+\sigma = \sqrt{Var(X)}
+\]
+
+\section{Descripción de la Aplicación}
+
+La aplicación realiza los siguientes pasos:
+
+\begin{enumerate}
+\item Captura video desde la cámara.
+\item Convierte la imagen a escala de grises.
+\item Convierte la matriz de píxeles en un vector estadístico.
+\item Calcula media, varianza y desviación estándar.
+\item Calcula la distribución empírica de probabilidad.
+\item Estima la probabilidad de que la intensidad sea mayor a 200.
+\item Muestra los resultados en tiempo real.
+\end{enumerate}
+
+\section{Código Fuente}
+
+\begin{lstlisting}
+# AQUÍ DEBES PEGAR TU CÓDIGO COMPLETO DE PYTHON
+\end{lstlisting}
+
+\section{Resultados}
+
+Durante las pruebas realizadas se observó que:
+
+\begin{itemize}
+\item La media aumenta cuando la iluminación es mayor.
+\item La varianza incrementa cuando existe mayor contraste.
+\item La probabilidad P(X > 200) aumenta ante objetos blancos.
+\end{itemize}
+
+\section{Conclusión}
+
+Se demostró que es posible aplicar conceptos de probabilidad y estadística al análisis de imágenes en tiempo real. La intensidad de píxel puede modelarse como una variable aleatoria discreta, permitiendo calcular métricas como esperanza matemática y varianza.
+
+El uso de OpenCV facilita la captura y procesamiento eficiente de datos visuales, integrando teoría matemática con aplicaciones prácticas en ingeniería de sistemas.
+
+\end{document}
